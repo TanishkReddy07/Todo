@@ -20,22 +20,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qsS-zk-aBm">
                         <rect key="frame" x="5" y="10" width="310" height="66"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0gl-FF-Dul">
-                                <rect key="frame" x="204" y="17.666666666666671" width="51" height="31"/>
-                                <connections>
-                                    <action selector="isCompletedSwitchChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="DaU-qK-Ip2"/>
-                                </connections>
-                            </switch>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWV-sd-kIa">
-                                <rect key="frame" x="258" y="15.666666666666671" width="52" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="highlighter" catalog="system"/>
-                                <connections>
-                                    <action selector="editButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5AH-gm-8z4"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ld-5f-l4n">
-                                <rect key="frame" x="0.0" y="6" width="194" height="54"/>
+                                <rect key="frame" x="0.0" y="6" width="310" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qei-bc-K2J">
                                         <rect key="frame" x="10" y="5" width="85" height="21"/>
@@ -72,13 +58,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0gl-FF-Dul" firstAttribute="leading" secondItem="2ld-5f-l4n" secondAttribute="trailing" constant="10" id="6zL-0H-AR0"/>
+                            <constraint firstAttribute="trailing" secondItem="2ld-5f-l4n" secondAttribute="trailing" id="5tb-xo-zhV"/>
+                            <constraint firstItem="2ld-5f-l4n" firstAttribute="top" secondItem="qsS-zk-aBm" secondAttribute="top" constant="6" id="7CJ-yO-z8a"/>
                             <constraint firstItem="2ld-5f-l4n" firstAttribute="leading" secondItem="qsS-zk-aBm" secondAttribute="leading" id="85j-hn-5P1"/>
-                            <constraint firstItem="HWV-sd-kIa" firstAttribute="centerY" secondItem="qsS-zk-aBm" secondAttribute="centerY" id="FOt-ri-QDG"/>
-                            <constraint firstItem="0gl-FF-Dul" firstAttribute="centerY" secondItem="qsS-zk-aBm" secondAttribute="centerY" id="JWv-Ec-WAL"/>
-                            <constraint firstItem="HWV-sd-kIa" firstAttribute="leading" secondItem="0gl-FF-Dul" secondAttribute="trailing" constant="5" id="NAS-oS-ebA"/>
-                            <constraint firstAttribute="trailing" secondItem="HWV-sd-kIa" secondAttribute="trailing" id="sjg-bV-u0O"/>
-                            <constraint firstItem="2ld-5f-l4n" firstAttribute="centerY" secondItem="0gl-FF-Dul" secondAttribute="centerY" id="uyd-yD-mpd"/>
+                            <constraint firstAttribute="bottom" secondItem="2ld-5f-l4n" secondAttribute="bottom" constant="6" id="Y10-ew-m0p"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -95,7 +78,6 @@
             <connections>
                 <outlet property="container" destination="qsS-zk-aBm" id="gyu-Dq-K4w"/>
                 <outlet property="crossOutView" destination="OLE-Ha-9sj" id="i54-kg-98o"/>
-                <outlet property="isCompletedSwitch" destination="0gl-FF-Dul" id="8a9-zX-Rg8"/>
                 <outlet property="taskNameLabel" destination="qei-bc-K2J" id="dgO-Ba-Csw"/>
                 <outlet property="taskStatusLabel" destination="0sX-5U-hES" id="hI6-Wf-bLp"/>
             </connections>
@@ -103,7 +85,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="highlighter" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -21,7 +21,6 @@ class TodoTableViewCell: UITableViewCell {
     @IBOutlet weak var container: UIView!
     
     @IBOutlet weak var crossOutView: UIView!
-    @IBOutlet weak var isCompletedSwitch: UISwitch!
     @IBOutlet weak var taskStatusLabel: UILabel!
     
     var todo: Todo? {
@@ -38,7 +37,6 @@ class TodoTableViewCell: UITableViewCell {
         container.layer.shadowRadius = 7
         container.layer.cornerRadius = 10
         
-        crossOutView.isHidden = !isCompletedSwitch.isOn
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -51,25 +49,10 @@ class TodoTableViewCell: UITableViewCell {
         self.taskNameLabel.text = todo?.name
         self.taskStatusLabel.attributedText = self.todo?.getDuteDate()
         if let todo = self.todo {
-            self.isCompletedSwitch.isOn = todo.isCompleted
             self.crossOutView.isHidden = !todo.isCompleted
         }
         
         
     }
     
-    @IBAction func isCompletedSwitchChanged(_ sender: Any) {
-        crossOutView.isHidden = !isCompletedSwitch.isOn
-        
-        Task.init {
-            let _ = try await ToDoRepository.shared.updateTodo(name: self.todo!.name, hasDueDate: self.todo!.hasDueDate, isCompleted: isCompletedSwitch.isOn, dueDate: self.todo!.dueDate, notes: self.todo!.notes, object: self.todo!)
-        }
-        
-    }
-    @IBAction func editButtonClicked(_ sender: Any) {
-        if let todo = self.todo {
-            self.didClickEdit?(todo)
-        }
-        
-    }
 }
